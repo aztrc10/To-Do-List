@@ -1,0 +1,145 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+    --bg-color: #fff; 
+    --primary-color: #4f4f4f;
+    --boder-color: #9f9f9f;
+    --primary-font: "Momo Trust Sans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+}
+/*Globales*/
+
+.title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--tittle-color);
+}
+
+.field {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 2rem;
+}
+
+.field input[type="text"] { 
+    padding: 1rem;
+    border: none;
+    border-bottom:3px solid var(--boder-color);
+    font-size: 4rem;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.field input::placeholder {
+    font-size: 2rem;
+    color: #9ca3af;
+}
+
+.field .btn {
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 2rem;
+    color: #fff;
+    font-size: 4rem;
+}
+
+.tareas-display {
+   margin:0; 
+  padding:0; 
+}
+
+.task{
+  display:flex;
+  align-items:center;
+  width:100%;
+  padding: 2rem;
+  gap: 1rem; 
+  margin-top:2rem; 
+  border: 1px solid #000; 
+  border-radius: 15px; 
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.task span {
+  transition: all 0.4s ease;
+}
+
+.task span.animar-tarea {
+  text-decoration: line-through;
+  opacity: 0.5;
+  transform: translateX(8px); 
+  color: #9ca3af;
+}
+
+.task input[type="checkbox"] { 
+  transform: scale(1.5); 
+  cursor: pointer; 
+}
+
+.task .material-symbols-outlined{
+  font-variation-settings:
+    'FILL' 4,    
+    'wght' 900;
+  margin-left:auto; 
+  cursor: pointer;        
+}
+
+.tachar {
+  opacity: 0;
+  transform: translateX(2rem);
+  transition: all 0.5s ease;
+}
+
+.material-symbols-outlined {
+  text-decoration: none !important;
+}
+
+/*Media Queryes*/
+@media (max-width: 576px) {
+  html {
+    font-size: 55%; 
+  }
+
+  .form {
+    padding: 2rem;
+  }
+
+  .field input[type="text"],
+  .field .btn {
+    width: 100%;
+    font-size: 2.2rem;
+  }
+
+  .field .btn {
+    width: 8rem;
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .task{
+    font-size: 2.2rem;
+  }
+}
