@@ -1,12 +1,14 @@
-const btnDarkMode = document.querySelector('.btn-darkmode');
-const icono = btnDarkMode.querySelector('.material-symbols-outlined');
+const btnDark = document.querySelector('.btn-darkmode');
+const icono = btnDark.querySelector('.material-symbols-outlined');
 
-btnDarkMode.addEventListener('click', () => {
+if (localStorage.modo === 'dark') {
+  document.body.classList.add('dark-mode');
+  icono.textContent = 'light_mode';
+}
+
+btnDark.onclick = () => {
   document.body.classList.toggle('dark-mode');
-
-  if (document.body.classList.contains('dark-mode')) {
-    icono.textContent = 'light_mode'; 
-  } else {
-    icono.textContent = 'dark_mode'; 
-  }
-});
+  const dark = document.body.classList.contains('dark-mode');
+  icono.textContent = dark ? 'light_mode' : 'dark_mode';
+  localStorage.modo = dark ? 'dark' : 'light';
+};
